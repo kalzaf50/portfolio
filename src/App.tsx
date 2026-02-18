@@ -140,8 +140,8 @@ const App: React.FC = () => {
               title="Interactive Digital Games for National Primary Schools"
               organization="FTM Tech"
               date="Dec 2025"
-              description="An interactive 3D educational web platform for Malaysian national primary schools using T
-              hree.js."
+              description="An interactive 3D educational web platform for Malaysian national primary schools using
+              Three.js."
             />
             <ProjectItem
               title="DegreeMate: AI-Powered Career Guidance Platform"
