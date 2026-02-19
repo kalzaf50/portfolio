@@ -12,22 +12,26 @@ interface ProjectItemProps {
   organization: string;
   date: string;
   description: string;
+  tags: string[];
 }
 
-const ProjectItem: React.FC<ProjectItemProps> = ({ title, organization, date, description }) => (
+const ProjectItem: React.FC<ProjectItemProps> = ({ title, organization, date, description, tags }) => (
   <div>
     <div className="flex justify-between items-start mb-1">
       <h3 className="text-base" style={{ fontFamily: 'InterBold' }}>{title}</h3>
       <span className="date-row">{date}</span>
     </div>
-    <p className="text-sm text-zinc-600 mb-1">{organization}</p>
-    <p className="text-sm text-zinc-600 mb-1">{description}</p>
+    <p className="text-sm font-bold text-[#7f0000] mb-1">{organization}</p>
+    <p className="text-sm mb-2">{description}</p>
+    <div className="text-xs flex flex-wrap gap-2">
+      {tags.map(tag => <span key={tag} className="tag-pill">{tag}</span>)}
+    </div>
   </div>
 );
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-[#F4F4F4] text-black" style={{ fontFamily: 'InterRegular' }}>
+    <div className="min-h-screen bg-[#fffbf7] text-black" style={{ fontFamily: 'InterRegular' }}>
       <div className="max-w-4xl mx-auto px-8 py-12 md:py-16">
 
         {/* HEADER */}
@@ -39,17 +43,17 @@ const App: React.FC = () => {
 
         {/* SUMMARY */}
         <section className="mb-5" style={fadeInStyle(0.15)}>
-          <h2 className="text-s mb-5" style={{ fontFamily: 'InterRegular' }}>
+          <h2 className="text-s font-bold text-[#7f0000] mb-5" style={{ fontFamily: 'InterRegular' }}>
             Software Engineering Graduate
           </h2>
-          <p className="text-sm leading-relaxed text-zinc-600">
+          <p className="text-sm leading-relaxed">
             Mara Scholar · Kyung Hee University, South Korea · Software Convergence.
           </p>
-          <p className="mt-3 text-sm leading-relaxed text-zinc-600">
+          <p className="mt-3 text-sm leading-relaxed">
             My journey into tech didn't start in a lecture hall, but back in high school with a fascination
             of how software and games are built from the ground up.
           </p>
-          <p className="mt-3 text-sm leading-relaxed text-zinc-600">
+          <p className="mt-3 text-sm leading-relaxed">
             When I'm not coding, you'll find me on the badminton court!
           </p>
         </section>
@@ -66,7 +70,7 @@ const App: React.FC = () => {
               <div className="flex justify-between items-start">
                 <div>
                   <a href="https://ftmtech.com.my/" className="name-row" style={{ fontFamily: 'InterBold' }}>FTM Tech</a>
-                  <p className="text-xs text-zinc-500 mt-1">Crafting Digital Excellence Through Innovation</p>
+                  <p className="text-xs mt-1">Crafting Digital Excellence Through Innovation</p>
                 </div>
                 <span className="date-row">Jun 2025 – Dec 2025</span>
               </div>
@@ -100,7 +104,7 @@ const App: React.FC = () => {
             <div className="flex-1">
               <div className="flex justify-between items-start">
                 <div>
-                  <h3 className="name-row" style={{ fontFamily: 'InterBold' }}>Kyung Hee University, South Korea</h3>
+                  <a href="https://www.khu.ac.kr/eng/user/main/view.do" className="name-row" style={{ fontFamily: 'InterBold' }}>Kyung Hee University, South Korea</a>
                   <p className="text-xs text-zinc-500 mt-1">Bachelor's Degree in Software Convergence</p>
                 </div>
                 <span className="date-row">Mar 2022 – Feb 2026</span>
@@ -113,7 +117,7 @@ const App: React.FC = () => {
             <div className="flex-1">
               <div className="flex justify-between items-start">
                 <div>
-                  <h3 className="name-row" style={{ fontFamily: 'InterBold' }}>UniKL Malaysian Institute of Information Technology</h3>
+                  <a href="https://www.unikl.edu.my/institute/malaysian-institute-of-information-technology/" className="name-row" style={{ fontFamily: 'InterBold' }}>UniKL Malaysian Institute of Information Technology</a>
                   <p className="text-xs text-zinc-500 mt-1">Foundation in Science and Technology for Korean University</p>
                 </div>
                 <span className="date-row">Jul 2020 – Dec 2021</span>
@@ -135,13 +139,15 @@ const App: React.FC = () => {
               description="A camera-based hand-tracking system that enhances immersion in 3D games by allowing
               the player's real hand to interact with the virtual world as a dynamic platform or obstacle without
               any special hardware required."
+              tags={['Python', 'OpenCV', 'MediaPipe', 'Godot Engine']}
             />
             <ProjectItem
               title="Interactive Digital Games for National Primary Schools"
               organization="FTM Tech"
               date="Dec 2025"
-              description="An interactive 3D educational web platform for Malaysian national primary schools using
-              Three.js."
+              description="An interactive 3D educational web platform for Malaysian national primary schools to learn
+              about coding."
+              tags={['Figma', 'Three.js', 'JavaScript', 'WebGL']}
             />
             <ProjectItem
               title="DegreeMate: AI-Powered Career Guidance Platform"
@@ -149,6 +155,7 @@ const App: React.FC = () => {
               date="Sep 2025"
               description="A cloud-based career guidance platform that leverages real-time job market intelligence to
               support informed academic and career decisions."
+              tags={['React', 'Node.js', 'Postman', 'AWS', 'MongoDB', 'Perplexity API']}
             />
             <ProjectItem
               title="Informatics-Based Flood Management Project in Klang Valley"
@@ -156,36 +163,8 @@ const App: React.FC = () => {
               date="Jul 2025"
               description="A research project in Klang Valley on informatics-driven flood management framework aligned
               with UN SDG 11 (Sustainable Cities and Communities)."
+              tags={['GIS', 'Data Analysis', 'Research', 'UN SDG 11']}
             />
-          </div>
-        </section>
-
-        {/* SKILLS & ADDITIONALS */}
-        <section className="mb-10" style={fadeInStyle(0.75)}>
-          <h2 className="section-heading" style={{ fontFamily: 'InterBold' }}>
-            SKILLS & ADDITIONALS
-          </h2>
-          <div className="space-y-3 text-sm">
-            <div>
-              <span className="font-bold">Programming Languages: </span>
-              <span className="text-zinc-800">Python, C++, HTML, JavaScript, Lua, SQL</span>
-            </div>
-            <div>
-              <span className="font-bold">Frameworks & Libraries: </span>
-              <span className="text-zinc-800">React, Node.js, Three.js, OpenCV, MediaPipe</span>
-            </div>
-            <div>
-              <span className="font-bold">Tools & Platforms: </span>
-              <span className="text-zinc-800">AWS, MongoDB, Git, Postman, Figma, Notion</span>
-            </div>
-            <div>
-              <span className="font-bold">Languages: </span>
-              <span className="text-zinc-800">Malay, English, Korean</span>
-            </div>
-            <div>
-              <span className="font-bold">Certifications: </span>
-              <span className="text-zinc-800">Oracle Cloud Infrastructure 2025 Foundations Associate, Cisco (Introduction to Cybersecurity)</span>
-            </div>
           </div>
         </section>
 

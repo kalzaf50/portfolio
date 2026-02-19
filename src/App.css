@@ -56,17 +56,32 @@
   object-fit: contain;
 }
 
+.tag-pill {
+  display: inline-block;
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  background: #7f0000;
+  color: #F7F6F3;
+  border: 1px solid #7f0000;
+  letter-spacing: 0.02em;
+}
+
 .date-row {
   font-size: 0.875rem;
   line-height: 1.25rem;
-  color: #71717a;
   white-space: nowrap;
   margin-left: 1rem;
 }
 
 .name-row {
-  font-size: 1rem;
-  line-height: 1.25rem;
+  background-image: linear-gradient(#7f0000, #7f0000);
+  background-size: 0% 1px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  transition: background-size 0.25s ease;
+}
+.name-row:hover {
+  background-size: 100% 1px;
 }
 
 .entry-row {
@@ -80,7 +95,11 @@
   transition: background 0.2s, border-color 0.2s;
 }
 
-.entry-row:hover {
-  background: #EFEFED;
-  border-color: #E0DFDA;
+.project-entry {
+  border-left: 2px solid transparent;
+  padding-left: 0.75rem;
+  transition: border-color 0.2s;
+}
+.project-entry:hover {
+  border-left-color: #7f0000;
 }
