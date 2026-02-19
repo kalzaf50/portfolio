@@ -58,6 +58,19 @@ const App: React.FC = () => {
           </p>
         </section>
 
+        {/* LINKS */}
+        <div className="text-sm flex gap-5 mb-10 mt-1" style={fadeInStyle(0.22)}>
+          <a href="https://github.com/kalzaf50" target="_blank" rel="noreferrer" className="social-link">
+            GitHub ↗
+          </a>
+          <a href="https://linkedin.com/in/kalzaf" target="_blank" rel="noreferrer" className="social-link">
+            LinkedIn ↗
+          </a>
+          <a href="mailto:kalzaf50@gmail.com" className="social-link">
+            Email ↗
+          </a>
+        </div>
+
         {/* EXPERIENCE */}
         <section className="mb-10" style={fadeInStyle(0.3)}>
           <h2 className="section-heading" style={{ fontFamily: 'InterBold' }}>
@@ -167,6 +180,11 @@ const App: React.FC = () => {
             />
           </div>
         </section>
+
+        {/* FOOTER */}
+        <footer className="footer">
+          <p>Kal's · {new Date().getFullYear()}</p>
+        </footer>
 
       </div>
     </div>
