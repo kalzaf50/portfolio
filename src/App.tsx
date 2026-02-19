@@ -45,7 +45,7 @@ const App: React.FC = () => {
         {/* SUMMARY */}
         <section className="mb-5" style={fadeInStyle(0.15)}>
           <h2 className="text-s font-bold text-[#7f0000] mb-5" style={{ fontFamily: 'InterRegular' }}>
-            Software Engineering Graduate
+            Full Stack Developer
           </h2>
           <p className="text-sm leading-relaxed">
             Mara Scholar · Kyung Hee University, South Korea · Software Convergence.
