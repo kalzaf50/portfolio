@@ -9,16 +9,17 @@ const fadeInStyle = (delay: number): React.CSSProperties => ({
 
 interface ProjectItemProps {
   title: string;
+  link: string;
   organization: string;
   date: string;
   description: string;
   tags: string[];
 }
 
-const ProjectItem: React.FC<ProjectItemProps> = ({ title, organization, date, description, tags }) => (
+const ProjectItem: React.FC<ProjectItemProps> = ({ title, organization, date, description, tags, link }) => (
   <div>
     <div className="flex justify-between items-start mb-1">
-      <h3 className="text-base" style={{ fontFamily: 'InterBold' }}>{title}</h3>
+      <a href={link} className="text-base" style={{ fontFamily: 'InterBold' }}>{title}</a>
       <span className="date-row">{date}</span>
     </div>
     <p className="text-sm font-bold text-[#7f0000] mb-1">{organization}</p>
@@ -147,6 +148,7 @@ const App: React.FC = () => {
           <div className="space-y-5">
             <ProjectItem
               title="Integrating Reality: Real-Time Hand Tracking for Interactive 3D Game Mechanics"
+              link="https://github.com/kalzaf50/integrating-reality-game"
               organization="Kyung Hee University"
               date="Dec 2025"
               description="A camera-based hand-tracking system that enhances immersion in 3D games by allowing
@@ -156,6 +158,7 @@ const App: React.FC = () => {
             />
             <ProjectItem
               title="Interactive Digital Games for National Primary Schools"
+              link="https://pdisk-alpha.onrender.com/"
               organization="FTM Tech"
               date="Dec 2025"
               description="An interactive 3D educational web platform for Malaysian national primary schools to learn
@@ -165,6 +168,7 @@ const App: React.FC = () => {
             <ProjectItem
               title="DegreeMate: AI-Powered Career Guidance Platform"
               organization="FTM Tech"
+              link="https://degreemate-dev.vercel.app/"
               date="Sep 2025"
               description="A cloud-based career guidance platform that leverages real-time job market intelligence to
               support informed academic and career decisions."
@@ -176,7 +180,7 @@ const App: React.FC = () => {
               date="Jul 2025"
               description="A research project in Klang Valley on informatics-driven flood management framework aligned
               with UN SDG 11 (Sustainable Cities and Communities)."
-              tags={['GIS', 'Data Analysis', 'Research', 'UN SDG 11']}
+              tags={['Data Analysis', 'Research', 'UN SDG 11']}
             />
           </div>
         </section>
