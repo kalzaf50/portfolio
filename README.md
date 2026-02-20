@@ -1,2 +1,2 @@
-[kalzaf.vercel.app
-](https://kalzaf.vercel.app/)
+[kalzaf.pages.dev
+](https://kalzaf.pages.dev/)
