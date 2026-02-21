@@ -93,7 +93,7 @@ const App: React.FC = () => {
           </div>
 
           <div className="entry-row">
-            <img src="/syunaz-logo.png" alt="Syunaz logo" className="flex-shrink-0 w-11 h-11 rounded-md object-contain" />
+            <img src="/syunaz-logo.avif" alt="Syunaz logo" className="flex-shrink-0 w-11 h-11 rounded-md object-contain" />
             <div className="flex-1">
               <div className="flex justify-between items-start">
                 <div>
@@ -127,7 +127,7 @@ const App: React.FC = () => {
           </div>
 
           <div className="entry-row">
-            <img src="/unikl-logo.png" alt="unikl logo" className="flex-shrink-0 w-11 h-11 rounded-md object-contain" />
+            <img src="/unikl-logo.avif" alt="unikl logo" className="flex-shrink-0 w-11 h-11 rounded-md object-contain" />
             <div className="flex-1">
               <div className="flex justify-between items-start">
                 <div>
@@ -172,7 +172,7 @@ const App: React.FC = () => {
               date="Sep 2025"
               description="A cloud-based career guidance platform that leverages real-time job market intelligence to
               support informed academic and career decisions."
-              tags={['React', 'Node.js', 'Postman', 'AWS', 'MongoDB', 'Perplexity API']}
+              tags={['React', 'Node.js', 'Express.js', 'Postman', 'AWS', 'MongoDB', 'Perplexity API']}
             />
             <ProjectItem
               title="Informatics-Based Flood Management Project in Klang Valley"
