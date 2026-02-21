@@ -19,7 +19,7 @@ interface ProjectItemProps {
 const ProjectItem: React.FC<ProjectItemProps> = ({ title, organization, date, description, tags, link }) => (
   <div>
     <div className="flex justify-between items-start mb-1">
-      <a href={link} className="text-base" style={{ fontFamily: 'InterBold' }}>{title}</a>
+      <a href={link} className="name-row" style={{ fontFamily: 'InterBold' }}>{title}</a>
       <span className="date-row">{date}</span>
     </div>
     <p className="text-sm font-bold text-[#7f0000] mb-1">{organization}</p>
